@@ -115,3 +115,57 @@ export function getSelectionSortAnimations(array)
     }
     return animations;
 }
+
+export function getHeapSortAniamtions(array)
+{
+    const animations=[];
+    var l=array.length;
+    var lim=parseInt(l/2-1);
+    for(let i=lim;i>=0;i--)
+    {
+        heapify(array,l,i,animations);
+        //console.log(i);
+    }
+    heapsort(array,animations,l);
+    return animations;
+}
+
+function heapsort(array,animations,l)
+{
+    for(let i=l-1;i>=0;i--)
+    {
+        var temp=array[i];
+        array[i]=array[0];
+        array[0]=temp;
+        animations.push([i,array[i]]);
+        animations.push([0,array[0]]);
+        heapify(array,i,0,animations);
+    }
+}
+
+function heapify(array,l,i,animations)
+{
+    //console.log(animations.length);
+    var largest=i;
+    var left=2*i+1;
+    var right=2*i+2;
+
+    if(left<l && array[left]>array[largest])
+    {
+        largest=left;
+    }
+    if(right<l && array[right]>array[largest])
+    {
+        largest=right;
+    }
+
+    if(largest!==i)
+    {
+        var temp=array[i];
+        array[i]=array[largest];
+        array[largest]=temp;
+        animations.push([largest,array[largest]]);
+        animations.push([i,array[i]]);
+        heapify(array,l,largest,animations);
+    }
+}

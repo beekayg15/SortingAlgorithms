@@ -83,6 +83,20 @@ export default class SortingVisualizer extends React.Component
         }
     }
 
+    HeapSort()
+    {
+        const animations=SortingAlgorithms.getHeapSortAniamtions(this.state.array);
+        for(let i=0;i<animations.length;i++)
+        {
+            const arraybars=document.getElementsByClassName('array-bar');
+            setTimeout(()=>{
+                const [ind,h]=animations[i];
+                const st=arraybars[ind].style;
+                st.height=`${h}px`;
+            },i*5);
+        }
+    }
+
     render()
     {
         const {array}=this.state;
@@ -101,6 +115,7 @@ export default class SortingVisualizer extends React.Component
                 <button onClick={()=>this.BubbleSort()}>Bubble Sort</button>
                 <button onClick={()=>this.SelectionSort()}>Selection Sort</button>
                 <button onClick={()=>this.InsertionSort()}>Insertion Sort</button>
+                <button onClick={()=>this.HeapSort()}>Heap Sort</button>
             </div>
         );
     }
