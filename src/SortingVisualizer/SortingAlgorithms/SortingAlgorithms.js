@@ -169,3 +169,40 @@ function heapify(array,l,i,animations)
         heapify(array,l,largest,animations);
     }
 }
+
+export function getQuickSortAniamtions(array)
+{
+    const animations=[];
+    var l=array.length;
+    quicksort(array,0,l-1,animations);
+    return animations;
+}
+
+function quicksort(array,start,end,animations)
+{
+    if(start>=end)
+    {
+        return;
+    }
+    var pivot=array[end];
+    var insert=start;
+    for(let i=start;i<end;i++)
+    {
+        if(array[i]<pivot)
+        {
+            var temp=array[i];
+            array[i]=array[insert];
+            array[insert]=temp;
+            animations.push([i,array[i]]);
+            animations.push([insert,array[insert]]);
+            insert++;
+        }
+    }
+    var t=array[insert];
+    array[insert]=array[end];
+    array[end]=t;
+    animations.push([end,array[end]]);
+    animations.push([insert,array[insert]]);
+    quicksort(array,start,insert-1,animations);
+    quicksort(array,insert+1,end,animations);
+}

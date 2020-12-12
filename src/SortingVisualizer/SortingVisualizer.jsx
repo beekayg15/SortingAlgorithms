@@ -2,7 +2,7 @@ import React from 'react';
 import './SortingVisualizer.css';
 import * as SortingAlgorithms from './SortingAlgorithms/SortingAlgorithms.js';
 
-const animation_speed=20;
+var animation_speed=10;
 
 export default class SortingVisualizer extends React.Component
 {
@@ -20,7 +20,7 @@ export default class SortingVisualizer extends React.Component
     resetArray()
     {
         const array=[];
-        for(let i=0;i<335;i++)
+        for(let i=0;i<333;i++)
         {
             array.push(randomin(5,550));
         }
@@ -37,7 +37,7 @@ export default class SortingVisualizer extends React.Component
                 const [ind,h]=animations[i];
                 const st=arraybars[ind].style;
                 st.height=`${h}px`;
-            },i*1);
+            },i*animation_speed);
         }
     }
 
@@ -51,7 +51,7 @@ export default class SortingVisualizer extends React.Component
                 const [ind,h]=animations[i];
                 const st=arraybars[ind].style;
                 st.height=`${h}px`; 
-            },i*1);
+            },i*animation_speed);
         }
     }
 
@@ -65,7 +65,7 @@ export default class SortingVisualizer extends React.Component
                 const [ind,h]=animations[i];
                 const st=arraybars[ind].style;
                 st.height=`${h}px`; 
-            },i*1);
+            },i*animation_speed);
         }
     }
 
@@ -79,7 +79,7 @@ export default class SortingVisualizer extends React.Component
                 const [ind,h]=animations[i];
                 const st=arraybars[ind].style;
                 st.height=`${h}px`;
-            },i*1);
+            },i*animation_speed);
         }
     }
 
@@ -93,7 +93,35 @@ export default class SortingVisualizer extends React.Component
                 const [ind,h]=animations[i];
                 const st=arraybars[ind].style;
                 st.height=`${h}px`;
-            },i*5);
+            },i*animation_speed);
+        }
+    }
+
+    QuickSort()
+    {
+        const animations=SortingAlgorithms.getQuickSortAniamtions(this.state.array);
+        for(let i=0;i<animations.length;i++)
+        {
+            const arraybars=document.getElementsByClassName('array-bar');
+            setTimeout(()=>{
+                const [ind,h]=animations[i];
+                const st=arraybars[ind].style;
+                st.height=`${h}px`;
+            },i*animation_speed);
+        }
+    }
+
+    IncreaseSpeed()
+    {
+        animation_speed+=3;
+    }
+
+    DecreaseSpeed()
+    {
+        animation_speed-=3;
+        if(animation_speed<=0)
+        {
+            animation_speed=1;
         }
     }
 
@@ -110,12 +138,15 @@ export default class SortingVisualizer extends React.Component
                 ))}
                 <br></br>
                 <br></br>
+                <button onClick={()=>this.DecreaseSpeed()}>Speed -</button>
                 <button onClick={()=>this.resetArray()}>New Array</button>
                 <button onClick={()=>this.MergeSort()}>Merge Sort</button>
                 <button onClick={()=>this.BubbleSort()}>Bubble Sort</button>
                 <button onClick={()=>this.SelectionSort()}>Selection Sort</button>
                 <button onClick={()=>this.InsertionSort()}>Insertion Sort</button>
                 <button onClick={()=>this.HeapSort()}>Heap Sort</button>
+                <button onClick={()=>this.QuickSort()}>Quick Sort</button>
+                <button onClick={()=>this.IncreaseSpeed()}>Speed +</button>
             </div>
         );
     }
