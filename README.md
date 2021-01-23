@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# Sorting Algorithms Visualizer
+Page Deployment Link: https://barathkumarbk-15.github.io/SortingAlgorithms
+***
+An **interactive webpage** that lets you visualize some of the most popular sorting algorithms like `Merge Sort`, `Quick Sort`, `Heap Sort`, `Bubble Sort`, `Insertion Sort` and `Selection Sort`.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Tools and Languages Used :
+<p>
+<img width="45" height="45" hspace="10" src="https://cdn.worldvectorlogo.com/logos/visual-studio-code-1.svg"/>
+<img width="48" height="48" hspace="10" src="https://cdn.worldvectorlogo.com/logos/html5-1.svg"/>
+<img width="48" height="48" hspace="10" src="https://cdn.worldvectorlogo.com/logos/css-5.svg"/>
+<img width="45" height="45" hspace="10" src="https://cdn.worldvectorlogo.com/logos/javascript-2.svg"/>
+<img width="45" height="45" hspace="10" src="https://cdn.worldvectorlogo.com/logos/react-2.svg"/>
+<img width="45" height="45" hspace="10" src="https://cdn.worldvectorlogo.com/logos/nodejs-2.svg"/>
+<img width="45" height="45" hspace="10" src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg"/>
+<img width="45" height="45" hspace="10" src="https://www.vectorlogo.zone/logos/github/github-icon.svg"/>
+</p>
 
-## Available Scripts
+## Download and Usage :
+The code can be downloaded as a compressed `zip` file from the github web interface.
 
-In the project directory, you can run:
+The repository can also be cloned using:
+```
+git clone https://github.com/BarathKumarBK-15/SortingAlgorithms.git
+```
 
-### `npm start`
+The game can be deployed locally after extraction by opening the folder in the terminal and running the code,
+```
+npm start
+```
+The above code opens the webpage on your defaulf browser. The page can also be opened on other browsers by opening the link,
+```
+http://localhost:3000
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Components of Project :
+- **JavaScript XML** files - 1
+- **JavaScript** files - 1
+- **CSS** files - 1
+- _Note: The above mentioned files are the important additional files added to the default React-App_
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## About the Webpage :
+The **web page** is made of a single screen, that displays the elements of the **array**, whose **height** represents the **magnitude**. The page provides the user with a variety of options to choose between, each of which invokes a **function** in the background to perform the task. The various components and phases of the project are explained below:
 
-### `npm test`
+- **Visualizer Screen** :
+  - It serves as the **home page** for the visualizer.
+  - The page has a user friendly layout, that enable the user to choose between the `algorithms`.
+  - The user can choose any one of the `sorting algorithms` and observe how the elements get **swapped** during the process of sorting.
+  - The page also offers options to speed up and speed down the animation speed and to generate a new array.
+  
+- **Graphical Features** :
+  - The project contains **multiple graphical content** ranging from _bending of borders_ to _styled fonts_, _contrasting colour switches_ and _eye-soothing layout_.
+  - The `CSS` file checks in all the requisites for empowerment of the graphical interface.
+  
+- **JavaScript XML** :
+  - The `JavaScript XML` plays the most significal role, driving the entire visualizer.
+  - The **precise algorithm** of the visualizer manages the flow, controlling everything from **function calls** to **page switches**.
+  - The `algorithm` is built using simple `conditional statements`, `arrays`,`functions` and `classes`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **JavaScript** :
+  - The `JavaScript` plays a vital role controlling all the `sorting algorithms`.
+  - It recieves all the function calls and returns the animations for requested `algorithms`.
+  - All the `sorting algoritms` in the script is in its **_most time and space efficient_** form.
+ 
+### Suggested Browsers for Deployment :
+-	Microsoft Edge
+-	Google Chrome
+- Safari
 
-### `npm run build`
+### Screenshots of the WebPage :
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Home
+<img width="900" alt="game1" src="https://user-images.githubusercontent.com/66675130/105611653-7f02a480-5ddc-11eb-8cb3-b3ef2dddcc57.png">
+<img width="900" alt="game1" src="https://user-images.githubusercontent.com/66675130/105611635-6f835b80-5ddc-11eb-9505-0bc5c413f929.png">
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
