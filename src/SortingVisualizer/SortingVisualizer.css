@@ -7,7 +7,6 @@ body{
 }
 
 .array-bar{
-    width: 2px;
     background-color: orange;
     display: inline-block;
     margin: 0 1px;
