@@ -3,6 +3,7 @@ import './SortingVisualizer.css';
 import * as SortingAlgorithms from './SortingAlgorithms/SortingAlgorithms.js';
 
 var animation_speed=10;
+var numberofelements=250;
 
 export default class SortingVisualizer extends React.Component
 {
@@ -20,7 +21,7 @@ export default class SortingVisualizer extends React.Component
     resetArray()
     {
         const array=[];
-        for(let i=0;i<333;i++)
+        for(let i=0;i<numberofelements;i++)
         {
             array.push(randomin(5,550));
         }
@@ -125,20 +126,34 @@ export default class SortingVisualizer extends React.Component
         }
     }
 
+    IncreaseSize()
+    {
+        numberofelements+=25;
+        if(numberofelements>275)
+        {
+            numberofelements=275;
+        }
+        this.resetArray();
+    }
+
+    DecreaseSize()
+    {
+        numberofelements-=25;
+        if(numberofelements<25)
+        {
+            numberofelements=25;
+        }
+        this.resetArray();
+    }
+
     render()
     {
         const {array}=this.state;
         return (
             <div className="array-container">
-                {array.map((value,idx)=>(
-                <div 
-                className="array-bar" 
-                key={idx}
-                style={{height: `${value}px`}}></div>
-                ))}
                 <br></br>
-                <br></br>
-                <button onClick={()=>this.DecreaseSpeed()}>Speed -</button>
+                <button onClick={()=>this.IncreaseSize()}>Size +</button>
+                <button onClick={()=>this.IncreaseSpeed()}>Speed -</button>
                 <button onClick={()=>this.resetArray()}>New Array</button>
                 <button onClick={()=>this.MergeSort()}>Merge Sort</button>
                 <button onClick={()=>this.BubbleSort()}>Bubble Sort</button>
@@ -146,7 +161,18 @@ export default class SortingVisualizer extends React.Component
                 <button onClick={()=>this.InsertionSort()}>Insertion Sort</button>
                 <button onClick={()=>this.HeapSort()}>Heap Sort</button>
                 <button onClick={()=>this.QuickSort()}>Quick Sort</button>
-                <button onClick={()=>this.IncreaseSpeed()}>Speed +</button>
+                <button onClick={()=>this.DecreaseSpeed()}>Speed +</button>
+                <button onClick={()=>this.DecreaseSize()}>Size -</button>
+                <br></br>
+                <br></br>
+                <div id="bars">
+                {array.map((value,idx)=>(
+                <div 
+                className="array-bar" 
+                key={idx}
+                style={{height: `${value}px`}}></div>
+                ))}</div>
+                <br></br>
             </div>
         );
     }

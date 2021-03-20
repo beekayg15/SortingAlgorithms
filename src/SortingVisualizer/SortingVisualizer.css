@@ -3,9 +3,7 @@ body{
 }
 
 .array-container{
-    top: 10px;
-    position: absolute;
-    left: 13px;
+    align-content: center;
 }
 
 .array-bar{
